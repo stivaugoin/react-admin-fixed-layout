@@ -5,7 +5,7 @@ __COMPONENT DESCRIPTION GOES HERE__
 
 ## Demo & Examples
 
-Live demo: [stivaugoin.github.io/react-bootstrap-layout](http://stivaugoin.github.io/react-bootstrap-layout/)
+Live demo: [stivaugoin.github.io/react-admin-fixed-layout](http://stivaugoin.github.io/react-admin-fixed-layout/)
 
 To build the examples locally, run:
 
