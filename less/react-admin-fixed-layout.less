@@ -1,0 +1,67 @@
+/***************************************************************************************************
+ *  VARIABLES
+ **************************************************************************************************/
+
+// Navbar height
+@navbar-height-base: 51px;
+
+// Menu width
+@menu-width-small: 100px;
+@menu-width-base: 125px;
+@menu-width-large: 150px;
+
+// Sidebar width
+@sidebar-width-small: 400px;
+@sidebar-width-base: 500px;
+@sidebar-width-large: 600px;
+
+/***************************************************************************************************
+ *  LAYOUT
+ **************************************************************************************************/
+
+html, body,
+#app, .react-admin-fixed-layout {
+  height: 100%;
+  width: 100%;
+}
+
+.react-admin-fixed-layout-navbar {
+  height: @navbar-height-base;
+}
+
+.react-admin-fixed-layout-body {
+  height: ~"calc(100% - @{navbar-height-base})";
+}
+
+.react-admin-fixed-layout-content {
+  width: ~"calc(100% - @{menu-width-base})";
+}
+
+.react-admin-fixed-layout-menu,
+.react-admin-fixed-layout-content,
+.react-admin-fixed-layout-sidebar,
+.react-admin-fixed-layout-main {
+  float: left;
+  height: 100%;
+}
+
+.react-admin-fixed-layout-header {
+  margin-left: @menu-width-base;
+  padding: 1px;
+}
+
+.react-admin-fixed-layout-menu {
+  width: @menu-width-base;
+}
+
+.react-admin-fixed-layout-sidebar {
+  width: @sidebar-width-base;
+}
+
+.react-admin-fixed-layout-main {
+  width: 100%;
+
+  .react-admin-fixed-layout-sidebar ~ & {
+    width: ~"calc(100% - @{sidebar-width-base})";
+  }
+}

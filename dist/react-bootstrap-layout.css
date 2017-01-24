@@ -1,0 +1,15 @@
+.menu {
+  position: 'fixed';
+  top: '51px';
+  bottom: '0px';
+  left: '0px';
+  width: '100px';
+  float: 'left';
+}
+.main {
+  position: 'fixed';
+  top: '51px';
+  left: '150px';
+  bottom: '0px';
+  right: '0px';
+}
