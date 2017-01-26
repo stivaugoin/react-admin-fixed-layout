@@ -63,11 +63,12 @@ html, body,
 
 .react-admin-fixed-layout-sidebar {
   width: @sidebar-width-xsmall;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .react-admin-fixed-layout-main {
   width: 100%;
+  overflow-y: auto;
 
   .react-admin-fixed-layout-sidebar ~ & {
     width: ~"calc(100% - @{sidebar-width-xsmall})";
