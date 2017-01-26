@@ -5,22 +5,30 @@
 // Navbar height
 @navbar-height-base: 51px;
 
-// Menu width
-@menu-width-small: 100px;
-@menu-width-base: 125px;
-@menu-width-large: 150px;
+// Menu width (px)
+@menu-width-xsmall: 50px;
+@menu-width-small: 75px;
+@menu-width-medium: 100px;
+@menu-width-large: 125px;
 
-// Sidebar width
-@sidebar-width-small: 400px;
-@sidebar-width-base: 500px;
-@sidebar-width-large: 600px;
+// Sidebar width (%)
+@sidebar-width-xsmall: 40%;
+@sidebar-width-small: 30%;
+@sidebar-width-medium: 30%;
+@sidebar-width-large: 35%;
+
+// Width from Bootstrap
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
 
 /***************************************************************************************************
  *  LAYOUT
  **************************************************************************************************/
 
 html, body,
-#app, .react-admin-fixed-layout {
+#app, #react-root,
+.react-admin-fixed-layout {
   height: 100%;
   width: 100%;
 }
@@ -34,7 +42,7 @@ html, body,
 }
 
 .react-admin-fixed-layout-content {
-  width: ~"calc(100% - @{menu-width-base})";
+  width: ~"calc(100% - @{menu-width-xsmall})";
 }
 
 .react-admin-fixed-layout-menu,
@@ -46,22 +54,88 @@ html, body,
 }
 
 .react-admin-fixed-layout-header {
-  margin-left: @menu-width-base;
   padding: 1px;
 }
 
 .react-admin-fixed-layout-menu {
-  width: @menu-width-base;
+  width: @menu-width-xsmall;
 }
 
 .react-admin-fixed-layout-sidebar {
-  width: @sidebar-width-base;
+  width: @sidebar-width-xsmall;
+  overflow-y: scroll;
 }
 
 .react-admin-fixed-layout-main {
   width: 100%;
 
   .react-admin-fixed-layout-sidebar ~ & {
-    width: ~"calc(100% - @{sidebar-width-base})";
+    width: ~"calc(100% - @{sidebar-width-xsmall})";
+  }
+}
+
+/***************************************************************************************************
+ *  RESPONSIVE
+ **************************************************************************************************/
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  // Menu
+  .react-admin-fixed-layout-menu {
+    width: @menu-width-small;
+  }
+  .react-admin-fixed-layout-content {
+    width: ~"calc(100% - @{menu-width-small})";
+  }
+
+  // Sidebar
+  .react-admin-fixed-layout-sidebar {
+    width: @sidebar-width-small;
+  }
+  .react-admin-fixed-layout-main {
+    .react-admin-fixed-layout-sidebar ~ & {
+      width: ~"calc(100% - @{sidebar-width-small})";
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+  // Menu
+  .react-admin-fixed-layout-content {
+    width: ~"calc(100% - @{menu-width-medium})";
+  }
+  .react-admin-fixed-layout-menu {
+    width: @menu-width-medium;
+  }
+
+  // Sidebar
+  .react-admin-fixed-layout-sidebar {
+    width: @sidebar-width-medium;
+  }
+  .react-admin-fixed-layout-main {
+    .react-admin-fixed-layout-sidebar ~ & {
+      width: ~"calc(100% - @{sidebar-width-medium})";
+    }
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+  // Menu
+  .react-admin-fixed-layout-content {
+    width: ~"calc(100% - @{menu-width-large})";
+  }
+  .react-admin-fixed-layout-menu {
+    width: @menu-width-large;
+  }
+
+  // Sidebar
+  .react-admin-fixed-layout-sidebar {
+    width: @sidebar-width-large;
+  }
+  .react-admin-fixed-layout-main {
+    .react-admin-fixed-layout-sidebar ~ & {
+      width: ~"calc(100% - @{sidebar-width-large})";
+    }
   }
 }
