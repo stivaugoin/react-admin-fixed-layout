@@ -40,10 +40,11 @@ body,
 }
 .react-admin-fixed-layout-sidebar {
   width: 40%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .react-admin-fixed-layout-main {
   width: 100%;
+  overflow-y: auto;
 }
 .react-admin-fixed-layout-sidebar ~ .react-admin-fixed-layout-main {
   width: calc(100% - 40%);
