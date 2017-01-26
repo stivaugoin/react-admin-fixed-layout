@@ -11,6 +11,7 @@
 html,
 body,
 #app,
+#react-root,
 .react-admin-fixed-layout {
   height: 100%;
   width: 100%;
@@ -22,7 +23,7 @@ body,
   height: calc(100% - 51px);
 }
 .react-admin-fixed-layout-content {
-  width: calc(100% - 125px);
+  width: calc(100% - 50px);
 }
 .react-admin-fixed-layout-menu,
 .react-admin-fixed-layout-content,
@@ -32,18 +33,66 @@ body,
   height: 100%;
 }
 .react-admin-fixed-layout-header {
-  margin-left: 125px;
   padding: 1px;
 }
 .react-admin-fixed-layout-menu {
-  width: 125px;
+  width: 50px;
 }
 .react-admin-fixed-layout-sidebar {
-  width: 500px;
+  width: 40%;
+  overflow-y: scroll;
 }
 .react-admin-fixed-layout-main {
   width: 100%;
 }
 .react-admin-fixed-layout-sidebar ~ .react-admin-fixed-layout-main {
-  width: calc(100% - 500px);
+  width: calc(100% - 40%);
+}
+/***************************************************************************************************
+ *  RESPONSIVE
+ **************************************************************************************************/
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .react-admin-fixed-layout-menu {
+    width: 75px;
+  }
+  .react-admin-fixed-layout-content {
+    width: calc(100% - 75px);
+  }
+  .react-admin-fixed-layout-sidebar {
+    width: 30%;
+  }
+  .react-admin-fixed-layout-sidebar ~ .react-admin-fixed-layout-main {
+    width: calc(100% - 30%);
+  }
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .react-admin-fixed-layout-content {
+    width: calc(100% - 100px);
+  }
+  .react-admin-fixed-layout-menu {
+    width: 100px;
+  }
+  .react-admin-fixed-layout-sidebar {
+    width: 30%;
+  }
+  .react-admin-fixed-layout-sidebar ~ .react-admin-fixed-layout-main {
+    width: calc(100% - 30%);
+  }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .react-admin-fixed-layout-content {
+    width: calc(100% - 125px);
+  }
+  .react-admin-fixed-layout-menu {
+    width: 125px;
+  }
+  .react-admin-fixed-layout-sidebar {
+    width: 35%;
+  }
+  .react-admin-fixed-layout-sidebar ~ .react-admin-fixed-layout-main {
+    width: calc(100% - 35%);
+  }
 }

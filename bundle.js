@@ -47,10 +47,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _libAddEvent = require('./lib/add-event');
-
-var _libAddEvent2 = _interopRequireDefault(_libAddEvent);
-
 var LayoutContent = (function (_Component) {
   _inherits(LayoutContent, _Component);
 
@@ -64,15 +60,17 @@ var LayoutContent = (function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var pageHeight = document.body.offsetHeight;
-      var navbarHeight = document.getElementsByClassName('react-admin-fixed-layout-navbar')[0].offsetHeight || 0;
-      var headerHeight = document.getElementsByClassName('react-admin-fixed-layout-header')[0].offsetHeight || 0;
+      var navbar = document.getElementsByClassName('react-admin-fixed-layout-navbar')[0];
+      var navbarHeight = navbar && navbar.offsetHeight || 0;
+      var header = document.getElementsByClassName('react-admin-fixed-layout-header')[0];
+      var headerHeight = header && header.offsetHeight || 0;
       var content = document.getElementsByClassName('react-admin-fixed-layout-content')[0];
       content.style.height = pageHeight - (navbarHeight + headerHeight) + 'px';
 
-      (0, _libAddEvent2['default'])(window, 'resize', function () {
+      window.addEventListener('resize', function () {
         pageHeight = document.body.offsetHeight;
         content.style.height = pageHeight - (navbarHeight + headerHeight) + 'px';
-      });
+      }, false);
     }
   }, {
     key: 'render',
@@ -95,7 +93,7 @@ LayoutContent.propTypes = {
 exports['default'] = LayoutContent;
 module.exports = exports['default'];
 
-},{"./lib/add-event":8,"react":undefined}],3:[function(require,module,exports){
+},{"react":undefined}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -236,27 +234,7 @@ LayoutSidebar.propTypes = {
 exports["default"] = LayoutSidebar;
 module.exports = exports["default"];
 
-},{"react":undefined}],8:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-    value: true
-});
-var addEvent = function addEvent(object, type, callback) {
-    if (object == null || typeof object == 'undefined') return;
-    if (object.addEventListener) {
-        object.addEventListener(type, callback, false);
-    } else if (object.attachEvent) {
-        object.attachEvent('on' + type, callback);
-    } else {
-        object['on' + type] = callback;
-    }
-};
-
-exports['default'] = addEvent;
-module.exports = exports['default'];
-
-},{}],"react-admin-fixed-layout":[function(require,module,exports){
+},{"react":undefined}],"react-admin-fixed-layout":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
