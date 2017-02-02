@@ -54,6 +54,7 @@ html, body,
 }
 
 .react-admin-fixed-layout-header {
+  margin-left: @menu-width-xsmall;
   padding: 1px;
 }
 
@@ -88,6 +89,11 @@ html, body,
     width: ~"calc(100% - @{menu-width-small})";
   }
 
+  // Header
+  .react-admin-fixed-layout-header {
+    margin-left: @menu-width-small;
+  }
+
   // Sidebar
   .react-admin-fixed-layout-sidebar {
     width: @sidebar-width-small;
@@ -109,6 +115,11 @@ html, body,
     width: @menu-width-medium;
   }
 
+  // Header
+  .react-admin-fixed-layout-header {
+    margin-left: @menu-width-medium;
+  }
+
   // Sidebar
   .react-admin-fixed-layout-sidebar {
     width: @sidebar-width-medium;
@@ -128,6 +139,11 @@ html, body,
   }
   .react-admin-fixed-layout-menu {
     width: @menu-width-large;
+  }
+
+  // Header
+  .react-admin-fixed-layout-header {
+    margin-left: @menu-width-large;
   }
 
   // Sidebar
