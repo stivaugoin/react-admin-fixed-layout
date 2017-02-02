@@ -1,6 +1,6 @@
 {
   "name": "react-admin-fixed-layout",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "React Admin Fixed Layout",
   "main": "lib/Layout.js",
   "author": "Steve Bourgoin",
