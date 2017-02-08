@@ -65,10 +65,10 @@ body,
     margin-left: 75px;
   }
   .react-admin-fixed-layout-sidebar {
-    width: 30%;
+    width: 40%;
   }
   .react-admin-fixed-layout-sidebar ~ .react-admin-fixed-layout-main {
-    width: calc(100% - 30%);
+    width: calc(100% - 40%);
   }
 }
 /* Medium devices (desktops, 992px and up) */
@@ -83,10 +83,10 @@ body,
     margin-left: 100px;
   }
   .react-admin-fixed-layout-sidebar {
-    width: 30%;
+    width: 40%;
   }
   .react-admin-fixed-layout-sidebar ~ .react-admin-fixed-layout-main {
-    width: calc(100% - 30%);
+    width: calc(100% - 40%);
   }
 }
 /* Large devices (large desktops, 1200px and up) */
